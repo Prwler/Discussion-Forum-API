@@ -29,11 +29,11 @@ public class CommentService {
     UserRepository userRepository;
 
     public Comment createComment(CommentDto commentDto){
-        Optional<BlogPost> post = blogPostRepository.findById(commentDto.getPost());
+        Optional<BlogPost> post = blogPostRepository.findById(commentDto.getPostId());
         if(!post.isPresent()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Post not found");
         }
-        Optional<User> user = userRepository.findById(commentDto.getUser());
+        Optional<User> user = userRepository.findById(commentDto.getUserId());
         if(!user.isPresent()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
         }

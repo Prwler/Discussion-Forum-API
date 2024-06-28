@@ -14,5 +14,13 @@ public class CommentDto {
     private MultipartFile imageFile;
     private Long userId;
     private Long postId;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public Long getPostId() {
+        return postId;
+    }
 }
 
